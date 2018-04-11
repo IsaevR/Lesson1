@@ -8,26 +8,29 @@ namespace ConsoleApp8
         {
             string[] str = { "Alex", "Donald", "Brain", "Tom" };
            
-            int len = str.Length;
-            Random rand = new Random();
-            Console.WriteLine("List of names before mixing\n");
-
+            int len = str.Length;          // получаем длину строки с помощью метода Length
+            Random rand = new Random();    
+            Console.WriteLine("List of names before mixing\n"); 
+            /// <summary>
+            ///  вывод исходного порядка элементов массива 
+            /// <summary>
             for (int i = 0; i < len; i++)
                 Console.WriteLine(" " + str[i]);
-            /// пермешивание массива строк
-            /// 
-            
+        
+            /// <summary>
+            ///  вывод элементов массива после перестановки элементов 
+            /// <summary>
             Console.WriteLine("\nList of names after mixing\n");
             for (int i = len - 1; i >= 0; i--)
             {
-                int r = rand.Next(i + 1);
-                string temp = str[r];
-                str[r] = str[i];
-                str[i] = temp;
+                int r = rand.Next(i + 1);  // генерирование случайных чисел средствами класса Random
+                string temp = str[r];      // буфер для строкового значения массива со случайым индексом
+                str[r] = str[i];           
+                str[i] = temp;             
                 Console.WriteLine(" " + str[i]);
             }
 
-            Console.ReadLine();
+            
         }
     }
 }
